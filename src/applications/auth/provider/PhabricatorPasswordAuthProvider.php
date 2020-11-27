@@ -114,8 +114,8 @@ final class PhabricatorPasswordAuthProvider extends PhabricatorAuthProvider {
   }
 
   public function getLoginOrder() {
-    // Make sure username/password appears first if it is enabled.
-    return '100-'.$this->getProviderName();
+    // Make sure username/password appears LAST if it is enabled.
+    return '600-'.$this->getProviderName();
   }
 
   public function shouldAllowAccountLink() {
